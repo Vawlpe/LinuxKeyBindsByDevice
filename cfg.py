@@ -1,11 +1,12 @@
 import json
+import os.path
 import threading
 import kbeIntercepter
 
 
 def ReadCfg(path):
     print(f"[cfg.ReadCfg] Loading from {path}")
-    data = json.load(open(path))
+    data = json.load(open(os.path.expanduser(path)))
     threads = []
     for kbID, binds in data.items():
         print(f"[cfg.ReadCfg] Creating thread for {kbID}")

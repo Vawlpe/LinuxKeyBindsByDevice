@@ -1,4 +1,7 @@
-# Pycharm
+# cmake
+cmake-build-debug/
+
+# Pycharm/CLion
 .idea
 
 # Byte-compiled / optimized / DLL files
