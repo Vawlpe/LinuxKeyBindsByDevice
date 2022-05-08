@@ -1,7 +1,15 @@
 #include <unistd.h>
-#include <errno.h>
+#include <stdio.h>
+#include <limits.h>
+#include <string.h>
+#include <libgen.h>
 
 int main(int argc, char *argv[]) {
     setgid(993);
-    return execv("./main.py", argv);
+    char execPath[PATH_MAX];
+    readlink("/proc/self/exe", execPath, sizeof(execPath));
+    dirname(execPath);
+    strcat(execPath, "/main.py");
+
+    return execv(execPath, argv);
 }
