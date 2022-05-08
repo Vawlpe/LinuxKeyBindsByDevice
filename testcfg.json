@@ -1,5 +1,9 @@
 {
   "/dev/input/by-id/usb-USB_KB_USB_KB-event-kbd" : {
-      "98" : "alacritty --hold -e neofetch | lolcat"
+      "98" : {
+        "run": "alacritty --hold -e neofetch | lolcat",
+        "blockThread": "False"
+      },
+      "keepDefaultBehaviour": "True"
   }
 }
