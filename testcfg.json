@@ -1,0 +1,5 @@
+{
+  "/dev/input/by-id/usb-USB_KB_USB_KB-event-kbd" : {
+      "98" : "alacritty --hold -e neofetch | lolcat"
+  }
+}
