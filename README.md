@@ -26,19 +26,22 @@ ___
 allowing it to read and write input files without root perms
 - Run `sudo chmod g+s ./lkbbd` to enable setuid bit for group on lkbbd binary 
 to allow privelege escalation to `input` group
-- Create a config file at `~/.config/lkbbd.json` with content similar to this:
-  ```json
-  {
-    "/dev/input/by-id/usb-USB_KB_USB_KB-event-kbd" : {
-      "96" : {
-          "run": "alacritty",
-          "blockThread": "False"
-        },
-      "keepDefaultBehaviour": "False"
-    }
-  }
-  ```
-- Add the following line to your `.xinitrc` file to run it at startup:
+- Create a valid configuration file:    
+    - Create a config file at `~/.config/lkbbd.json` with content similar to this:
+      ```json
+      {
+        "/dev/input/by-id/usb-USB_KB_USB_KB-event-kbd" : {
+          "96" : {
+              "run": "alacritty",
+              "blockThread": "False"
+            },
+          "keepDefaultBehaviour": "False"
+        }
+      }
+      ```
+    ***OR***
+    - Run `lkbbd` to begin config generation wizard
+- Add the following line to your `.xinitrc` file to run `lkbbd` at startup:
     ```shell
     exec lkbbd
     ```
